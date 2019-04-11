@@ -45,16 +45,16 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.Asia_Graph = new System.Windows.Forms.TabPage();
             this.Asia_Forecast = new System.Windows.Forms.TabPage();
-            this.Europe_Page = new System.Windows.Forms.TabPage();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.Europe_Page = new System.Windows.Forms.TabPage();
             this.databaseDataSet = new GrodnoKhim.DatabaseDataSet();
             this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
@@ -227,23 +227,33 @@
             this.Asia_Forecast.TabIndex = 2;
             this.Asia_Forecast.Text = "Прогноз";
             // 
-            // Europe_Page
+            // button2
             // 
-            this.Europe_Page.Location = new System.Drawing.Point(4, 29);
-            this.Europe_Page.Name = "Europe_Page";
-            this.Europe_Page.Padding = new System.Windows.Forms.Padding(3);
-            this.Europe_Page.Size = new System.Drawing.Size(1106, 576);
-            this.Europe_Page.TabIndex = 1;
-            this.Europe_Page.Text = "Европа";
-            this.Europe_Page.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(777, 402);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 47);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Очистить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // listView2
+            // button1
             // 
-            this.listView2.Location = new System.Drawing.Point(40, 74);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(307, 290);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.button1.Location = new System.Drawing.Point(491, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 47);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Спрогнозировать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listView3
+            // 
+            this.listView3.Location = new System.Drawing.Point(428, 74);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(630, 290);
+            this.listView3.TabIndex = 2;
+            this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // toolStrip2
             // 
@@ -295,31 +305,23 @@
             this.toolStripButton8.Size = new System.Drawing.Size(97, 29);
             this.toolStripButton8.Text = "Обновить";
             // 
-            // listView3
+            // listView2
             // 
-            this.listView3.Location = new System.Drawing.Point(428, 74);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(630, 290);
-            this.listView3.TabIndex = 2;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView2.Location = new System.Drawing.Point(40, 74);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(307, 290);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // Europe_Page
             // 
-            this.button1.Location = new System.Drawing.Point(491, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 47);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Спрогнозировать";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(777, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 47);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Очистить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Europe_Page.Location = new System.Drawing.Point(4, 29);
+            this.Europe_Page.Name = "Europe_Page";
+            this.Europe_Page.Padding = new System.Windows.Forms.Padding(3);
+            this.Europe_Page.Size = new System.Drawing.Size(1106, 576);
+            this.Europe_Page.TabIndex = 1;
+            this.Europe_Page.Text = "Европа";
+            this.Europe_Page.UseVisualStyleBackColor = true;
             // 
             // databaseDataSet
             // 

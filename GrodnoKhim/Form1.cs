@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace GrodnoKhim
 {
@@ -25,13 +26,13 @@ namespace GrodnoKhim
         {
             string connectionString = ConfigurationManager.ConnectionStrings["GrodnoKhim.Properties.Settings.DatabaseConnectionString"].ConnectionString;
             sqlConnection = new SqlConnection(connectionString);
+            
             await sqlConnection.OpenAsync();
 
             listView1.GridLines = true;
             listView1.FullRowSelect = true;
             listView1.View = View.Details;
 
-            listView1.Columns.Add("Id");
             listView1.Columns.Add("Период");
             listView1.Columns.Add("Нефть");
             listView1.Columns.Add("Бензол");
@@ -49,6 +50,17 @@ namespace GrodnoKhim
             listView2.Columns.Add("Цена нефти");
             await LoadOilAsync();
 
+            listView3.GridLines = true;
+            listView3.FullRowSelect = true;
+            listView3.View = View.Details;
+            listView3.Columns.Add("Период");
+            listView3.Columns.Add("Бензол");
+            listView3.Columns.Add("Капролактам");
+            listView3.Columns.Add("Полиамид-6");
+            listView3.Columns.Add("Нить полиамидная техническая");
+            listView3.Columns.Add("Ткань кордная");
+           
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,7 +75,7 @@ namespace GrodnoKhim
         private async Task LoadAsiaAsync() //SELECT
         {
             SqlDataReader sqlReader = null;
-            SqlCommand getAsiaCommand = new SqlCommand("SELECT * FROM [Asia_Table]", sqlConnection);
+            SqlCommand getAsiaCommand = new SqlCommand("SELECT [Period], [Oil], [Benzene], [Caprolactam], [Polyamid], [FPT], [CF] FROM [Asia_Table]", sqlConnection);
             
 
             try
@@ -73,8 +85,7 @@ namespace GrodnoKhim
                 while (await sqlReader.ReadAsync())
                 {
                     ListViewItem item = new ListViewItem(new string[]
-                    {
-                        Convert.ToString(sqlReader["Id"]),
+                    {                       
                         Convert.ToString(sqlReader["Period"]),
                         Convert.ToString(sqlReader["Oil"]),
                         Convert.ToString(sqlReader["Benzene"]),
@@ -133,6 +144,42 @@ namespace GrodnoKhim
                 }
             }
         }
+        private async Task LoadForecastAsync()
+        {
+            SqlDataReader sqlReader = null;
+            SqlCommand getForecastCommand = new SqlCommand("SELECT [Period], [ForecastBenzene], [ForecastCaprolactam], [ForecastPolyamid], [ForecastFPT], [ForecastCF] FROM Oil_Table", sqlConnection);
+
+            try
+            {
+                sqlReader = await getForecastCommand.ExecuteReaderAsync();
+                while (await sqlReader.ReadAsync())
+                {
+                    ListViewItem item = new ListViewItem(new string[]
+                        {
+                        Convert.ToString(sqlReader["Period"]),
+                        Convert.ToString(sqlReader["ForecastBenzene"]),
+                        Convert.ToString(sqlReader["ForecastCaprolactam"]),
+                        Convert.ToString(sqlReader["ForecastPolyamid"]),
+                        Convert.ToString(sqlReader["ForecastFPT"]),
+                        Convert.ToString(sqlReader["ForecastCF"])
+                        }
+                        );
+                    listView3.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlReader != null && !sqlReader.IsClosed)
+                {
+                    sqlReader.Close();
+                }
+            }
+        }
+
 
         private async void toolStripButton4_Click(object sender, EventArgs e) //Обновиить
         {
@@ -193,7 +240,20 @@ namespace GrodnoKhim
             }
         }
 
-        
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            string script = File.ReadAllText(@"SQLQuery3.sql");
+            var sqlCmd = new SqlCommand(script, sqlConnection);
+            await sqlCmd.ExecuteNonQueryAsync();
+            await LoadForecastAsync();
+            button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listView3.Items.Clear();
+            button1.Enabled = true;
+        }
     }
 }
 
