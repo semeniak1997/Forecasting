@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="GrodnoKhim.exe" version="1.0.0.0" publicKeyToken="564089d96d6396b5" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="GrodnoKhim" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="GrodnoKhim.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Параметры манифеста UAC
+          При необходимости изменить уровень контроля учетных записей Windows замените узел 
+          requestedExecutionLevel одним из следующих значений.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Если вы хотите использовать виртуализацию файлов и реестра для обратной 
+         совместимости, удалите узел requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GrodnoKhim.exe" size="179160">
+      <assemblyIdentity name="GrodnoKhim" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5uxlrR4hkvBBUuTuNcXFBMKaF97oaS8X5HYX79hNejY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="GrodnoKhim.exe.config" size="599">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wJ6F1oH7zY6MaNBXk2YqnsdzDqFzU42JbL8EEnuMpx4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LAPTOP-4HSI8EIP\acer" issuerKeyHash="e3a60a95e8c74d0dd6d51c38c770c70b1592ea75" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>MTYTHnuGRe1glk5wmlRqW4guHqDBp75x66dO9BQKg5o=</DigestValue></Reference></SignedInfo><SignatureValue>aAK51/2b12tBqPC1W2FxS3K1rEp92ruZYX2orZGfWHHPN/tit6FFdIeRMa+KQLhLBFp/fCMlvdiDx3TBAYkvQbout1nxdx1NmSaPijQfy7PBA998hWOOGxwKWik37gbxKFGeiBvIEOT8dR982okOr78TnvcayUxHhJrwnQG7ZtQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>o+2hBGJjUVPgcY0e/YPKOCYSqXwYhg1BLF8basL2LUbkoRICPS2ZiATvFxkd/ejnYMo1sJaP4AT7WDZNHi5yedLVgv+kfEfDyKki96bZslziMsos72PwAfc9QBCDL4iNmdNhUkAz/UzkjX23Y9M1cQBhlsbcVWLkinwD704v8T0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9a830a14f44ea7eb71bea7c1a01e2e885b6a549a704e9660ed45867b1e133631" Description="" Url=""><as:assemblyIdentity name="GrodnoKhim.exe" version="1.0.0.0" publicKeyToken="564089d96d6396b5" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LAPTOP-4HSI8EIP\acer</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Jfs3gH0IpDKG5CWjeO9YIFd41xeh9Pqv5qetXrG4gS0=</DigestValue></Reference></SignedInfo><SignatureValue>To+HBLI1Rqs5GRhIB2ZiHRvaaR7wHf66UP/5WHjxtmoS0mP75x6AeFrIjjXMC2XJtNj3kQ9P5QMWuMahFH9NGJn01OAV5j+fqZ27m8C4ndOHzf/qemrqt8R9evc4o9S5FsbHVIXzS5lAAwqRHhRoOblQvtNuzczrGhlNsI1C7q4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>o+2hBGJjUVPgcY0e/YPKOCYSqXwYhg1BLF8basL2LUbkoRICPS2ZiATvFxkd/ejnYMo1sJaP4AT7WDZNHi5yedLVgv+kfEfDyKki96bZslziMsos72PwAfc9QBCDL4iNmdNhUkAz/UzkjX23Y9M1cQBhlsbcVWLkinwD704v8T0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQGyRxACpx1qVLUPoW5e+LMzANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigATABBAFAAVABPAFAALQA0AEgAUwBJADgARQBJAFAAXABhAGMAZQByMB4XDTE5MDQxODE3MjIwNVoXDTIwMDQxNzIzMjIwNVowMzExMC8GA1UEAx4oAEwAQQBQAFQATwBQAC0ANABIAFMASQA4AEUASQBQAFwAYQBjAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAo+2hBGJjUVPgcY0e/YPKOCYSqXwYhg1BLF8basL2LUbkoRICPS2ZiATvFxkd/ejnYMo1sJaP4AT7WDZNHi5yedLVgv+kfEfDyKki96bZslziMsos72PwAfc9QBCDL4iNmdNhUkAz/UzkjX23Y9M1cQBhlsbcVWLkinwD704v8T0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQBTHm8QTqgP5SHDh5BSXV4euw0KKcv9616CwpsfUaRt641X8XV+skI4VQsYNmyE0qV3VQMMzA1ACwzwR2rRv1rdkWiP0gcBWKm0T1kT7lprMW70qQ2ESN8bqCnlBLkBuqRpb2TlrhlnTYGNsWkytIUmXjDKLRNseNuzh1VCJMKO3Q==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrodnoKhim", "GrodnoKhim\GrodnoKhim.csproj", "{DDFA54A9-ABF4-48E3-901B-1B6C88EAF322}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupGrodnoKhim", "SetupGrodnoKhim\SetupGrodnoKhim.vdproj", "{89F9837E-970A-4362-9104-6A615BF8F67F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDFA54A9-ABF4-48E3-901B-1B6C88EAF322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFA54A9-ABF4-48E3-901B-1B6C88EAF322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFA54A9-ABF4-48E3-901B-1B6C88EAF322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFA54A9-ABF4-48E3-901B-1B6C88EAF322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F9837E-970A-4362-9104-6A615BF8F67F}.Debug|Any CPU.ActiveCfg = Debug
+		{89F9837E-970A-4362-9104-6A615BF8F67F}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0880F60-39FD-4A53-AA09-68F3DFCAB25A}
+	EndGlobalSection
+EndGlobal
