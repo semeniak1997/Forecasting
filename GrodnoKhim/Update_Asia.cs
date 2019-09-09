@@ -21,8 +21,6 @@ namespace GrodnoKhim
             InitializeComponent();
             sqlConnection = connection;
             this.id = id;
-
-
         }
 
         private async void Update_Asia_Load(object sender, EventArgs e)
@@ -61,18 +59,18 @@ namespace GrodnoKhim
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand updateAsiaCommand = new SqlCommand("UPDATE [Asia_Table] SET [Period]=@Period, [Oil]=@Oil, [Benzene]=@Benzene, [Caprolactam]=@Caprolactam, [Polyamid]=@Polyamid, [FPT]=@FPT, [CF]=@CF WHERE [Id]=@Id", sqlConnection);
-            updateAsiaCommand.Parameters.AddWithValue("Id", id);
-            updateAsiaCommand.Parameters.AddWithValue("Period", Convert.ToDateTime(textBox1.Text));
-            updateAsiaCommand.Parameters.AddWithValue("Oil", Convert.ToDouble(textBox2.Text));
-            updateAsiaCommand.Parameters.AddWithValue("Benzene", Convert.ToDouble(textBox3.Text));
-            updateAsiaCommand.Parameters.AddWithValue("Caprolactam", Convert.ToDouble(textBox4.Text));
-            updateAsiaCommand.Parameters.AddWithValue("Polyamid", Convert.ToDouble(textBox5.Text));
-            updateAsiaCommand.Parameters.AddWithValue("FPT", Convert.ToDouble(textBox6.Text));
-            updateAsiaCommand.Parameters.AddWithValue("CF", Convert.ToDouble(textBox7.Text));
+            SqlCommand updateAsiaCommand = new SqlCommand("UPDATE [Asia_Table] SET [Period]=@Period, [Oil]=@Oil, [Benzene]=@Benzene, [Caprolactam]=@Caprolactam, [Polyamid]=@Polyamid, [FPT]=@FPT, [CF]=@CF WHERE [Id]=@Id", sqlConnection);           
 
             try
             {
+                updateAsiaCommand.Parameters.AddWithValue("Id", id);
+                updateAsiaCommand.Parameters.AddWithValue("Period", Convert.ToString(textBox1.Text));
+                updateAsiaCommand.Parameters.AddWithValue("Oil", Convert.ToDouble(textBox2.Text));
+                updateAsiaCommand.Parameters.AddWithValue("Benzene", Convert.ToDouble(textBox3.Text));
+                updateAsiaCommand.Parameters.AddWithValue("Caprolactam", Convert.ToDouble(textBox4.Text));
+                updateAsiaCommand.Parameters.AddWithValue("Polyamid", Convert.ToDouble(textBox5.Text));
+                updateAsiaCommand.Parameters.AddWithValue("FPT", Convert.ToDouble(textBox6.Text));
+                updateAsiaCommand.Parameters.AddWithValue("CF", Convert.ToDouble(textBox7.Text));
                 await updateAsiaCommand.ExecuteNonQueryAsync();
                 Close();
             }

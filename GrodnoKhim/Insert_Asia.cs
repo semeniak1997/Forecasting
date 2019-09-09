@@ -23,17 +23,15 @@ namespace GrodnoKhim
         private async void button1_Click(object sender, EventArgs e)
         {
             SqlCommand insertAsiaCommand = new SqlCommand("INSERT INTO [Asia_Table] (Period, Oil, Benzene, Caprolactam, Polyamid, FPT, CF)VALUES(@Period, @Oil, @Benzene, @Caprolactam, @Polyamid, @FPT, @CF)", sqlConnection);
-
-            insertAsiaCommand.Parameters.AddWithValue("Period", Convert.ToDateTime(textBox1.Text));
-            insertAsiaCommand.Parameters.AddWithValue("Oil", Convert.ToDouble(textBox2.Text));
-            insertAsiaCommand.Parameters.AddWithValue("Benzene", Convert.ToDouble(textBox3.Text));
-            insertAsiaCommand.Parameters.AddWithValue("Caprolactam", Convert.ToDouble(textBox4.Text));
-            insertAsiaCommand.Parameters.AddWithValue("Polyamid", Convert.ToDouble(textBox5.Text));
-            insertAsiaCommand.Parameters.AddWithValue("FPT", Convert.ToDouble(textBox6.Text));
-            insertAsiaCommand.Parameters.AddWithValue("CF", Convert.ToDouble(textBox7.Text));
-
             try
             {
+                insertAsiaCommand.Parameters.AddWithValue("Period", Convert.ToString(textBox1.Text));
+                insertAsiaCommand.Parameters.AddWithValue("Oil", Convert.ToDouble(textBox2.Text));
+                insertAsiaCommand.Parameters.AddWithValue("Benzene", Convert.ToDouble(textBox3.Text));
+                insertAsiaCommand.Parameters.AddWithValue("Caprolactam", Convert.ToDouble(textBox4.Text));
+                insertAsiaCommand.Parameters.AddWithValue("Polyamid", Convert.ToDouble(textBox5.Text));
+                insertAsiaCommand.Parameters.AddWithValue("FPT", Convert.ToDouble(textBox6.Text));
+                insertAsiaCommand.Parameters.AddWithValue("CF", Convert.ToDouble(textBox7.Text));
                 await insertAsiaCommand.ExecuteNonQueryAsync();
                 
                 Close();
@@ -49,5 +47,7 @@ namespace GrodnoKhim
         {
             Close();
         }
+
+        
     }
 }
